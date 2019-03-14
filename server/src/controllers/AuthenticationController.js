@@ -33,7 +33,9 @@ module.exports = {
         }
       })
 
-      /* these error messages should be more generic for security purposes, use details for testing - // TODO: replace error messages with generic warnings */
+      /* these error messages should be more generic for security 
+       * purposes, use details for testing - // TODO: replace error 
+       * messages with generic warnings */
       if (!user) {
         return res.status(403).send({
           error: 'Invalid User'
@@ -41,6 +43,9 @@ module.exports = {
       }
 
       const isPasswordValid = await user.comparePassword(password)
+      
+      console.log(password, user.password)
+      // console.log(isPasswordValid)
       if (!isPasswordValid) {
         return res.status(403).send({
           error: 'Incorrect password'
@@ -54,7 +59,7 @@ module.exports = {
       })
     } catch (err) {
       res.status(500).send({
-        error: 'An error has occured trying to log in'
+        error: 'An error has occured'
       })
     }
   }

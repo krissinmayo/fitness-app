@@ -1,39 +1,45 @@
+/* TODO: fix password hash on login */
+
 const Promise = require('bluebird')
 const bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'))
 
 function hashPassword (user, options) {
-    const SALT_FACTOR = 8
+  const SALT_FACTOR = 8
 
-    if (!user.changed('password')) {
-        return;
-    }
+  if (!user.changed('password')) {
+    return;
+  }
 
-    return bcrypt
-        .genSaltAsync(SALT_FACTOR)
-        .then(salt => bcrypt.hashAsync(user.password, salt, null))
-        .then(hash => {
-            user.setDataValue('password', hash)
-        })
+  return bcrypt
+    .genSaltAsync(SALT_FACTOR)
+    .then(salt => bcrypt.hashAsync(user.password, salt, null))
+    .then(hash => {
+      user.setDataValue('password', hash)
+    })
 }
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-      email: {
-          type: DataTypes.STRING,
-          unique: true
-      },
-      password: DataTypes.STRING
-    }, {
-        hooks: {
-            beforeCreate: hashPassword,
-            beforeUpdate: hashPassword,
-            beforeSave: hashPassword
-        }
-    })
+    email: {
+      type: DataTypes.STRING,
+      unique: true
+    },
+    password: DataTypes.STRING
+  }, {
+    hooks: {
+      beforeCreate: hashPassword,
+      beforeUpdate: hashPassword,
+      beforeSave: hashPassword
+    }
+  })
 
+  /* this isn't working, current password not being hashed */
   User.prototype.comparePassword = function (password) {
-      return bcrypt.compareAsync(password, this.password)
+    return bcrypt.compareAsync(password, this.password)
   }
+
+  //User.associate = function (models) {
+  //}
 
   return User
 }
