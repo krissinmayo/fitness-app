@@ -41,9 +41,9 @@ export default {
 
 <style scoped>
 .home {
-    cursor:pointer; 
+    cursor:pointer;
 }
 .home:hover {
-    color: #E9E; 
+    color: #E9E;
 }
 </style>
