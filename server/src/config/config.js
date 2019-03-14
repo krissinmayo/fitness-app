@@ -10,5 +10,8 @@ module.exports = {
             storage: './fitness-app.sqlite'
 
         }
+    },
+    authentication: {
+        jwtSecret: process.env.JWT_SECRET || 'secret'
     }
 }
