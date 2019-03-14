@@ -3,7 +3,7 @@
     <v-flex xs6 offset-xs3>
       <div class="white elevation-2">
         <v-toolbar flat dense class="blue darken-2" dark>
-          <v-toolbar-title>Register</v-toolbar-title>
+          <v-toolbar-title>Login</v-toolbar-title>
         </v-toolbar>
 
         <div class="pl-4 pr-4 pt-2 pb-2">
@@ -24,8 +24,8 @@
           <v-btn
             dark
             class="blue darken-2"
-            @click="register">
-            Register
+            @click="login">
+            Login
           </v-btn>
         </div>
       </div>
@@ -39,8 +39,8 @@ import AuthenticationService from '@/services/AuthenticationService'
 export default {
   data () {
     return {
-      email: '',
-      password: '',
+      email: 'email@gmail.com',
+      password: '1234567890',
       error: null
     }
   },

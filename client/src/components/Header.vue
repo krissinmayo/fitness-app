@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar fixed class="cyan" dark>
+    <v-toolbar fixed class="blue darken-2" dark>
         <v-toolbar-title dark class="mr-4">
             <span
                 class="home"
@@ -20,6 +20,10 @@
             <v-btn flat dark
                 @click="navigateTo({name: 'register'})">
                 Sign Up
+            </v-btn>
+            <v-btn flat dark
+                @click="navigateTo({name: 'login'})">
+                Login
             </v-btn>
         </v-toolbar-items>
     </v-toolbar>
