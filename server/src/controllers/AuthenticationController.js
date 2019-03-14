@@ -13,10 +13,14 @@ module.exports = {
   async register (req, res) {
     try {
       const user = await User.create(req.body)
-      res.send(user.toJSON())
+      const userJson = user.toJSON()
+      res.send({
+        user: userJson,
+        token: jwtSignUser(userJson)
+      })
     } catch (err) {
       res.status(400).send({
-          error: 'This email address is already in use.'
+        error: 'This email account is already in use.'
       })
     }
   },
@@ -28,16 +32,18 @@ module.exports = {
           email: email
         }
       })
+
+      /* these error messages should be more generic for security purposes, use details for testing - // TODO: replace error messages with generic warnings */
       if (!user) {
-        res.status(403).send({
-          error: 'User not valid'
+        return res.status(403).send({
+          error: 'Invalid User'
         })
       }
 
       const isPasswordValid = await user.comparePassword(password)
       if (!isPasswordValid) {
         return res.status(403).send({
-          error: 'Wrong password'
+          error: 'Incorrect password'
         })
       }
 
@@ -46,10 +52,9 @@ module.exports = {
         user: userJson,
         token: jwtSignUser(userJson)
       })
-
     } catch (err) {
       res.status(500).send({
-          error: 'An error has occured'
+        error: 'An error has occured trying to log in'
       })
     }
   }

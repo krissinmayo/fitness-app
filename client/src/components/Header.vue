@@ -10,7 +10,7 @@
 
         <v-toolbar-items>
             <v-btn flat dark>
-                Browse
+                Profile
             </v-btn>
         </v-toolbar-items>
 
