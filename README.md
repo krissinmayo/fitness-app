@@ -3,10 +3,6 @@
 
 # Setup
 
-You need to have Node Js installed: https://nodejs.org/en/
-
-You must at least have **NODE version 8.2.1**
-
 ### Client
 ```
 cd client
