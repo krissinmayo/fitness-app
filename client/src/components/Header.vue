@@ -16,12 +16,12 @@
                 Profile
             </v-btn>
             <v-btn flat dark
-                @click="navigateTo({name: 'updates'})">
-                Updates
+                @click="navigateTo({name: 'news'})">
+                News
             </v-btn>
             <v-btn flat dark
-                @click="navigateTo({name: 'browse'})">
-                Browse
+                @click="navigateTo({name: 'exercises'})">
+                Exercises
             </v-btn>
             <v-btn flat dark
                 @click="navigateTo({name: 'register'})">

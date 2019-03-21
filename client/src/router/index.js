@@ -4,8 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Profile from '@/components/Profile'
-import Browse from '@/components/Browse'
-import Updates from '@/components/Updates'
+import Exercises from '@/components/Exercises'
+import News from '@/components/News'
 
 Vue.use(Router)
 
@@ -32,14 +32,14 @@ export default new Router({
       component: Profile
     },
     {
-      path: '/browse',
-      name: 'browse',
-      component: Browse
+      path: '/exercises',
+      name: 'exercises',
+      component: Exercises
     },
     {
-      path: '/updates',
-      name: 'updates',
-      component: Updates
+      path: '/news',
+      name: 'news',
+      component: News
     }
   ]
 })
