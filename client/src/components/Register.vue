@@ -1,7 +1,7 @@
 <template>
-  <v-layout column>
+  <v-layout>
     <v-flex xs6 offset-xs3>
-      <div class="white elevation-2">
+      <div class="white">
         <v-toolbar flat dense class="blue darken-2" dark>
           <v-toolbar-title>Register</v-toolbar-title>
         </v-toolbar>
@@ -22,6 +22,14 @@
             v-model="password"
             autocomplete="new-password"
           ></v-text-field>
+          <br>
+
+          <v-text-field
+            label="Verify Password"
+            type="password"
+            v-model="password"
+            autocomplete="new-password"
+          ></v-text-field>
           </form>
           <br>
 
@@ -31,7 +39,7 @@
             dark
             class="blue darken-2"
             @click="register">
-            Register
+            Sign Up
           </v-btn>
         </div>
       </div>
