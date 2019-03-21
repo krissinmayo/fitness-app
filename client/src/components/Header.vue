@@ -8,15 +8,21 @@
             </span>
         </v-toolbar-title>
 
-        <v-toolbar-items>
-            <v-btn flat dark>
-                Profile
-            </v-btn>
-        </v-toolbar-items>
-
         <v-spacer></v-spacer>
 
         <v-toolbar-items>
+            <v-btn flat dark
+                @click="navigateTo({name: 'profile'})">
+                Profile
+            </v-btn>
+            <v-btn flat dark
+                @click="navigateTo({name: 'updates'})">
+                Updates
+            </v-btn>
+            <v-btn flat dark
+                @click="navigateTo({name: 'browse'})">
+                Browse
+            </v-btn>
             <v-btn flat dark
                 @click="navigateTo({name: 'register'})">
                 Sign Up
