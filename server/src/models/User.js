@@ -1,5 +1,3 @@
-/* TODO: fix password hash on login */
-
 const Promise = require('bluebird')
 const bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'))
 
@@ -33,7 +31,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
-  /* this isn't working, current password not being hashed */
   User.prototype.comparePassword = function (password) {
     return bcrypt.compare(password, this.password)
   }
