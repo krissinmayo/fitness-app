@@ -8,19 +8,20 @@
 
         <div class="pl-4 pr-4 pt-2 pb-2">
           <form
-            name="registration">
-          <v-text-field
-            label="Email"
-            v-model="email"
-          ></v-text-field>
-          <br>
+            name="registration"
+            autocomplete="off">
+            <v-text-field
+              label="Email"
+              v-model="email"
+            ></v-text-field>
+            <br>
 
-          <v-text-field
-            label="Password"
-            type="password"
-            v-model="password"
-            autocomplete="new-password"
-          ></v-text-field>
+            <v-text-field
+              label="Password"
+              type="password"
+              v-model="password"
+              autocomplete="new-password"
+            ></v-text-field>
           </form>
           <br>
 
