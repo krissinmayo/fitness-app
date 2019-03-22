@@ -11,7 +11,8 @@
         :key="story.id">
         <slot>
           {{story.title}} -
-          {{story.author}}
+          {{story.author}} -
+          {{story.date}}
         </slot>
       </div>
     </v-flex>

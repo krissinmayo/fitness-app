@@ -6,6 +6,7 @@ import Login from '@/components/Login'
 import Profile from '@/components/Profile'
 import Exercises from '@/components/Exercises'
 import News from '@/components/News'
+import NewExercise from '@/components/NewExercise'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/news',
       name: 'news',
       component: News
+    },
+    {
+      path: '/exercises/new',
+      name: 'new-exercise',
+      component: NewExercise
     }
   ]
 })

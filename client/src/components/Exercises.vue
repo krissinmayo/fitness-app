@@ -11,7 +11,8 @@
         :key="exercise.id">
         <slot>
           {{exercise.title}} -
-          {{exercise.muscleGroup}}
+          {{exercise.muscleGroup}} -
+          {{exercise.goalGroup}}
         </slot>
       </div>
     </v-flex>
