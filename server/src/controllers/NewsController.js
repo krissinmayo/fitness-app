@@ -9,7 +9,7 @@ module.exports = {
         res.send(newsUpdates)
     } catch (err) {
       res.status(500).send({
-        error: 'An error has occured while fetching exercises'
+        error: 'An error has occured while fetching news stories'
       })
     }
   },
@@ -19,7 +19,7 @@ module.exports = {
         res.send(newsUpdate)
     } catch (err) {
         res.status(500).send({
-        error: 'An error has occured while creating exercise'
+        error: 'An error has occured while creating news story'
       })
     }
   }

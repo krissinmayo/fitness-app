@@ -8,10 +8,10 @@
       </div>
       <div class="pl-4 pr-4 pt-2 pb-2"
         v-for="exercise in exercises"
-        :key="exercise.title">
+        :key="exercise.id">
         <slot>
           {{exercise.title}} -
-          {{exercise.type}}
+          {{exercise.muscleGroup}}
         </slot>
       </div>
     </v-flex>
@@ -27,7 +27,7 @@ export default {
     }
   },
   async mounted () {
-    this.exercises = await ExerciseService.index()
+    this.exercises = (await ExerciseService.index()).data
   }
 }
 </script>

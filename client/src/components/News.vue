@@ -7,11 +7,11 @@
         </v-toolbar>
       </div>
       <div class="pl-4 pr-4 pt-2 pb-2"
-        v-for="exercise in exercises"
-        :key="exercise.title">
+        v-for="story in stories"
+        :key="story.id">
         <slot>
-          {{exercise.title}} -
-          {{exercise.type}}
+          {{story.title}} -
+          {{story.author}}
         </slot>
       </div>
     </v-flex>
@@ -27,7 +27,7 @@ export default {
     }
   },
   async mounted () {
-    this.stories = await NewsService.index()
+    this.stories = (await NewsService.index()).data
   }
 }
 </script>
