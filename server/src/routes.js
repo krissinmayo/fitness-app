@@ -18,7 +18,8 @@ module.exports = (app) => {
     ExerciseController.post)
 
   app.get('/news',
-    NewsController.post)
-
+    NewsController.index)
   
+  app.post('/news',
+    NewsController.post)
 }

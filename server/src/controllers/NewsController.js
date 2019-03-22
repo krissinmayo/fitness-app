@@ -1,12 +1,12 @@
-const {Exercise} = require('../models')
+const {News} = require('../models')
 
 module.exports = {
   async index (req, res) {
     try {
-        const exercises = await Exercise.findAll({
+        const newsUpdates = await News.findAll({
             limit: 10
         })
-        res.send(exercises)
+        res.send(newsUpdates)
     } catch (err) {
       res.status(500).send({
         error: 'An error has occured while fetching exercises'
@@ -15,8 +15,8 @@ module.exports = {
   },
   async post (req, res) {
     try {
-        const exercise = await Exercise.create(req.body)
-        res.send(exercise)
+        const newsUpdate = await News.create(req.body)
+        res.send(newsUpdate)
     } catch (err) {
         res.status(500).send({
         error: 'An error has occured while creating exercise'
