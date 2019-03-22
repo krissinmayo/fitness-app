@@ -1,5 +1,5 @@
 # fitness-app
-2019 Web Server Fitness App using Vue.js and Express.js
+2019 Web Server Programming Project - Fitness App using Vue.js and Express.js
 
 # Setup
 
