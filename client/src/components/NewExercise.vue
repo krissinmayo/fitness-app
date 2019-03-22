@@ -68,6 +68,9 @@ export default {
     async create () {
       try {
         await ExerciseService.post(this.exercise)
+        this.$router.push({
+          name: 'exercises'
+        })
       } catch (err) {
         console.log(err)
       }
