@@ -4,9 +4,7 @@
       <div>
         <v-toolbar>
           <v-toolbar-title>Exercises</v-toolbar-title>
-
           <v-spacer></v-spacer>
-
           <v-btn
             dark
             large
@@ -16,12 +14,31 @@
           </v-btn>
         </v-toolbar>
       </div>
-      <div class="pl-4 pr-4 pt-2 pb-2"
+      <div class="pb-4"
         v-for="exercise in exercises"
         :key="exercise.id">
-          {{exercise.title}} -
-          {{exercise.muscleGroup}} -
-          {{exercise.goalGroup}}
+
+        <v-layout>
+          <v-flex xs4>
+            <div class="title">
+              {{exercise.title}}
+            </div>
+            <div class="muscle">
+              {{exercise.muscleGroup}}
+            </div>
+            <div class="goal">
+              {{exercise.goalGroup}}
+            </div>
+          </v-flex>
+          <v-flex xs2>
+          <v-btn
+            dark
+            class="blue darken-2"
+            @click="create">
+            Add to my workout
+          </v-btn>
+          </v-flex>
+        </v-layout>
       </div>
     </v-flex>
   </v-layout>
@@ -47,4 +64,13 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  font-size: 24px;
+}
+.muscle {
+  font-size: 18px;
+}
+.goal {
+  font-size: 16px;
+}
 </style>

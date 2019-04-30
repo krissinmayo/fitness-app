@@ -69,7 +69,7 @@ export default {
       try {
         await ExerciseService.post(this.exercise)
         this.$router.push({
-          name: 'exercises'
+          name: 'profile'
         })
       } catch (err) {
         console.log(err)

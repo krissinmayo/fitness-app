@@ -68,7 +68,7 @@ export default {
       try {
         await NewsService.post(this.update)
         this.$router.push({
-          name: 'news'
+          name: 'profile'
         })
       } catch (err) {
         console.log(err)
