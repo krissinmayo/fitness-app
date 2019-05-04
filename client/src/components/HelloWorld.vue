@@ -1,16 +1,16 @@
 <template>
   <v-layout>
     <v-flex xs6 offset-xs3>
-      <search-panel />
+      <profile />
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-import SearchPanel from './Exercises/SearchPanel'
+import Profile from './Profile'
 export default {
   components: {
-    SearchPanel
+    Profile
   }
 }
 </script>

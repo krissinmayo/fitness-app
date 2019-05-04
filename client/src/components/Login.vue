@@ -20,7 +20,7 @@
           ></v-text-field>
           <br>
 
-          <div class="error" v-html="error" />
+          <div class="danger-alert" v-html="error" />
           <br>
           <v-btn
             dark
@@ -54,6 +54,9 @@ export default {
         })
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$router.push({
+          name: 'profile'
+        })
       } catch (error) {
         this.error = error.response.data.error
       }
@@ -62,9 +65,5 @@ export default {
 }
 </script>
 <style scoped>
-
-.error {
-  color: black;
-}
 
 </style>

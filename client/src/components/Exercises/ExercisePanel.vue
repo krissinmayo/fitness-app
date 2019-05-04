@@ -9,7 +9,9 @@
             dark
             large
             class="blue darken-2"
-            @click="navigateTo({name: 'new-exercise'})">
+            :to="{
+              name: 'new-exercise'
+            }">
             New
           </v-btn>
         </v-toolbar>
