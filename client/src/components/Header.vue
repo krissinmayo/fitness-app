@@ -12,23 +12,33 @@
 
         <v-toolbar-items>
             <v-btn flat dark
-                @click="navigateTo({name: 'profile'})">
+                :to="{
+                    name: 'profile'
+                }">
                 Profile
             </v-btn>
             <v-btn flat dark
-                @click="navigateTo({name: 'news'})">
+                :to="{
+                    name: 'news'
+                }">
                 News
             </v-btn>
             <v-btn flat dark
-                @click="navigateTo({name: 'exercises'})">
+                :to="{
+                    name: 'exercises'
+                }">
                 Exercises
             </v-btn>
             <v-btn flat dark
-                @click="navigateTo({name: 'register'})">
+                :to="{
+                    name: 'register'
+                }">
                 Sign Up
             </v-btn>
             <v-btn flat dark
-                @click="navigateTo({name: 'login'})">
+                :to="{
+                    name: 'login'
+                }">
                 Login
             </v-btn>
         </v-toolbar-items>

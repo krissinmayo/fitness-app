@@ -33,8 +33,8 @@
           <v-flex xs2>
           <v-btn
             dark
-            class="blue darken-2"
-            @click="create">
+            class="blue darken-2">
+            <!-- @click="create"> -->
             Add to my workout
           </v-btn>
           </v-flex>
@@ -57,8 +57,13 @@ export default {
       this.$router.push(route)
     }
   },
-  async mounted () {
-    this.exercises = (await ExerciseService.index()).data
+  watch: {
+    '$route.query.search': {
+      immediate: true,
+      async handler (value) {
+        this.exercises = (await ExerciseService.index(value)).data
+      }
+    }
   }
 }
 </script>

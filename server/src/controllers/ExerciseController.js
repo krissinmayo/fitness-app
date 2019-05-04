@@ -3,9 +3,25 @@ const {Exercise} = require('../models')
 module.exports = {
   async index (req, res) {
     try {
-        const exercises = await Exercise.findAll({
+        let exercises = null
+        const search = req.query.search
+        if (search) {
+          exercises = await Exercise.findAll({
+            where: {
+              $or: [
+                'title', 'muscleGroup', 'goalGroup'
+              ].map(key => ({
+                [key]: {
+                  $like: `%${search}%`
+                }
+              }))
+            }
+          })
+        } else {
+          exercises = await Exercise.findAll({
             limit: 10
         })
+      }
         res.send(exercises)
     } catch (err) {
       res.status(500).send({
