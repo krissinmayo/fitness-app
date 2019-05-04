@@ -19,7 +19,7 @@
     <v-flex xs8>
       <div class="ml-4">
         <v-toolbar>
-          <v-toolbar-title>Exercises</v-toolbar-title>
+          <v-toolbar-title>My Workout</v-toolbar-title>
         </v-toolbar>
       </div>
       <div class="pl-4 pr-4 pt-2 pb-2"
