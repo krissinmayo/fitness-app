@@ -1,7 +1,9 @@
 <template>
     <v-toolbar fixed class="blue darken-2" dark>
         <v-toolbar-title>
-            <span class="home">
+            <span
+                class="home"
+                @click="navigateTo({name: 'root'})">
                 SelfInquiry
             </span>
         </v-toolbar-title>
@@ -43,6 +45,11 @@
 
 <script>
 export default {
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
+  }
 }
 </script>
 
