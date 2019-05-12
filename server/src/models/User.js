@@ -16,10 +16,12 @@ function hashPassword (user, options) {
     })
 }
 
+// create new sequelize model for users
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     email: {
       type: DataTypes.STRING,
+      // don't allow duplicate email addresses
       unique: true
     },
     password: DataTypes.STRING

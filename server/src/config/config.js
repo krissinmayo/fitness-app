@@ -1,3 +1,4 @@
+// configuration file
 const path = require('path')
 
 module.exports = {
@@ -7,8 +8,11 @@ module.exports = {
     user: process.env.DB_USER || 'fitness-app',
     password: process.env.DB_PASS || 'fitness-app',
     options: {
+      // type of database connecting to
       dialect: process.env.DIALECT || 'sqlite',
+      // location of database connecting to
       host: process.env.HOST || 'localhost',
+      // location to store files
       storage: path.resolve(__dirname, '../../fitness-app.sqlite')
     }
   },

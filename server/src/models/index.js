@@ -4,6 +4,7 @@ const Sequelize = require('sequelize')
 const config = require('../config/config')
 const db = {}
 
+// create new sequelize object to connect to db
 const sequelize = new Sequelize(
   config.db.database,
   config.db.user,
