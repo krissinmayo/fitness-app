@@ -9,34 +9,31 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-            <v-btn flat
-                :to="{
-                    name: 'profile'
-                }">
+            <v-btn
+                flat
+                @click="navigateTo({name: 'profile'})">
                 Profile
             </v-btn>
-            <v-btn flat
-                :to="{
-                    name: 'news'
-                }">
+            <v-btn
+                flat
+                @click="navigateTo({name: 'news'})">
                 News
             </v-btn>
-            <v-btn flat
-                :to="{
-                    name: 'exercises'
-                }">
+            <v-btn
+                flat
+                @click="navigateTo({name: 'exercises'})">
                 Exercises
             </v-btn>
-            <v-btn flat
-                :to="{
-                    name: 'register'
-                }">
+            <v-btn
+                v-if="!$store.state.isLoggedIn"
+                flat
+                @click="navigateTo({name: 'register'})">
                 Sign Up
             </v-btn>
-            <v-btn flat
-                :to="{
-                    name: 'login'
-                }">
+            <v-btn
+                v-if="!$store.state.isLoggedIn"
+                flat
+                @click="navigateTo({name: 'login'})">
                 Login
             </v-btn>
         </v-toolbar-items>
