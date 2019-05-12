@@ -16,7 +16,7 @@
           </v-btn>
         </v-toolbar>
       </div>
-      <div class="pb-4"
+      <div class="pt-4 pb-4"
         v-for="exercise in exercises"
         :key="exercise.id">
 

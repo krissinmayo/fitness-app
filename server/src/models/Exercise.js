@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     goalGroup: DataTypes.STRING,
     difficulty: DataTypes.STRING,
     imageURL: DataTypes.STRING
-    //youtubeID: DataTypes.STRING
   })
   return Exercise
 }

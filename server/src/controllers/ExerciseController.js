@@ -1,6 +1,7 @@
 const {Exercise} = require('../models')
 
 module.exports = {
+  // method to get all exercises
   async index (req, res) {
     try {
         let exercises = null
@@ -29,6 +30,7 @@ module.exports = {
       })
     }
   },
+  // method to create new exercise
   async post (req, res) {
     try {
         const exercise = await Exercise.create(req.body)

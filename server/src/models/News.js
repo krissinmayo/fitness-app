@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
       author: DataTypes.STRING,
       topic: DataTypes.STRING,
       storyURL: DataTypes.STRING
-      //youtubeID: DataTypes.STRING
     })
     return News
   }

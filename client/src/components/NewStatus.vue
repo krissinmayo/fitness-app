@@ -43,6 +43,12 @@
             @click="create">
             Submit
           </v-btn>
+          <v-btn
+            dark
+            class="blue darken-2"
+            @click="navigateTo({name: 'news'})">
+            Cancel
+          </v-btn>
         </div>
       </div>
     </v-flex>
@@ -64,6 +70,9 @@ export default {
     }
   },
   methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    },
     async create () {
       try {
         await NewsService.post(this.update)

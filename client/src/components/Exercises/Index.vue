@@ -1,8 +1,10 @@
 <template>
  <v-layout>
-    <v-flex xs6 offset-xs3>
+    <v-flex xs6>
       <search-panel />
-      <exercise-panel class="mt-2" />
+    </v-flex>
+    <v-flex xs8>
+      <exercise-panel class="ml-2" />
     </v-flex>
   </v-layout>
 </template>

@@ -43,6 +43,12 @@
             @click="create">
             Submit
           </v-btn>
+          <v-btn
+            dark
+            class="blue darken-2"
+            @click="navigateTo({name: 'exercises'})">
+            Cancel
+          </v-btn>
         </div>
       </div>
     </v-flex>
@@ -60,11 +66,13 @@ export default {
         goalGroup: null,
         difficulty: null,
         imageURL: null
-        // youtubeID: null
       }
     }
   },
   methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    },
     async create () {
       try {
         await ExerciseService.post(this.exercise)
