@@ -2,8 +2,11 @@ const Promise = require('bluebird')
 const bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'))
 
 function hashPassword (user, options) {
+  // use salt for added security
   const SALT_FACTOR = 8
+  console.log('hashPassword')
 
+  // if password hasn't changed, do nothing
   if (!user.changed('password')) {
     return
   }
@@ -33,6 +36,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
+  // validate user entered password
   User.prototype.comparePassword = function (password) {
     return bcrypt.compare(password, this.password)
   }
