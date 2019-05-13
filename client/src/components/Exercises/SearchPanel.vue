@@ -5,10 +5,14 @@
         <v-toolbar>
           <v-toolbar-title>Search</v-toolbar-title>
         </v-toolbar>
-        <v-text-field
-          label="search for exercises"
+        <v-autocomplete
           v-model="search"
-        ></v-text-field>
+          :items="items"
+          :search-input.sync="search"
+          label="Search for exercise inspiration"
+          placeholder="Enter search term(s)"
+          return-object
+        ></v-autocomplete>
       </div>
     </v-flex>
   </v-layout>
