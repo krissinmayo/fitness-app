@@ -8,6 +8,8 @@
 
         <div class="pl-4 pr-4 pt-2 pb-2">
           <v-text-field
+            required
+            :rules="required"
             label="Title"
             v-model="exercise.title"
           ></v-text-field>
@@ -66,6 +68,9 @@ export default {
         goalGroup: null,
         difficulty: null,
         imageURL: null
+      },
+      rules: {
+        required: (value) => !!value || 'Required.'
       }
     }
   },

@@ -16,10 +16,9 @@
           </v-btn>
         </v-toolbar>
       </div>
-      <div class="pt-4 pb-4"
+      <div class="exercise"
         v-for="exercise in exercises"
         :key="exercise.id">
-
         <v-layout>
           <v-flex xs4>
             <div class="title">
@@ -31,14 +30,18 @@
             <div class="goal">
               {{exercise.goalGroup}}
             </div>
+            <div class="level">
+              {{exercise.difficulty}}
+            </div>
           </v-flex>
           <v-flex xs2>
-          <v-btn
-            dark
-            class="blue darken-2">
-            <!-- @click="create"> -->
-            Add to my workout
-          </v-btn>
+            <img class="image" :src="exercise.imageURL" />
+            <v-btn
+              dark
+              class="blue darken-2">
+              <!-- @click="create"> -->
+              Add to my workout
+            </v-btn>
           </v-flex>
         </v-layout>
       </div>
@@ -71,13 +74,25 @@ export default {
 </script>
 
 <style scoped>
+.exercise {
+  padding: 15px;
+  height: 300px;
+  overflow: hidden;
+}
 .title {
   font-size: 24px;
 }
 .muscle {
-  font-size: 18px;
+  font-size: 16px;
 }
 .goal {
   font-size: 16px;
+}
+.level {
+  font-size: 16px;
+}
+.image {
+  width: 200%;
+  margin: 0 auto;
 }
 </style>
