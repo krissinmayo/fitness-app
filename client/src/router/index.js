@@ -5,8 +5,9 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Profile from '@/components/Profile'
 import Exercises from '@/components/Exercises/Index'
-import News from '@/components/News'
 import NewExercise from '@/components/NewExercise'
+import ViewExercise from '@/components/ViewExercise'
+import News from '@/components/News'
 import NewStatus from '@/components/NewStatus'
 
 Vue.use(Router)
@@ -39,14 +40,19 @@ export default new Router({
       component: Exercises
     },
     {
-      path: '/news',
-      name: 'news',
-      component: News
-    },
-    {
       path: '/exercises/new',
       name: 'new-exercise',
       component: NewExercise
+    },
+    {
+      path: '/exercises/:exerciseId',
+      name: 'exercise',
+      component: ViewExercise
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: News
     },
     {
       path: '/news/update',
