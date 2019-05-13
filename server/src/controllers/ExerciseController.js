@@ -23,10 +23,21 @@ module.exports = {
             limit: 10
         })
       }
-        res.send(exercises)
+      res.send(exercises)
     } catch (err) {
       res.status(500).send({
         error: 'An error has occured while fetching exercises'
+      })
+    }
+  },
+  // method to display an exercise
+  async show (req, res) {
+    try {
+      const exercise = await Exercise.findById(req.params.exerciseId)
+      res.send(exercise)
+    } catch (err) {
+      res.status(500).send({
+        error: 'An error has occured'
       })
     }
   },

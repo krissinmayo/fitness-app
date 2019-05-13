@@ -13,13 +13,13 @@ module.exports = (app) => {
   
   app.get('/exercises',
     ExerciseController.index)
-  
+  app.get('/exercises/:exerciseId',
+    ExerciseController.show)
   app.post('/exercises',
     ExerciseController.post)
 
   app.get('/news',
     NewsController.index)
-  
   app.post('/news',
     NewsController.post)
 }

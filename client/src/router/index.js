@@ -6,7 +6,8 @@ import Login from '@/components/Login'
 import Profile from '@/components/Profile'
 import Exercises from '@/components/Exercises/Index'
 import NewExercise from '@/components/NewExercise'
-import ViewExercise from '@/components/ViewExercise'
+import ViewExercise from '@/components/Exercises/ViewExercise'
+import EditExercise from '@/components/EditExercise'
 import News from '@/components/News'
 import NewStatus from '@/components/NewStatus'
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/exercises/:exerciseId',
       name: 'exercise',
       component: ViewExercise
+    },
+    {
+      path: '/exercises/:exerciseId/edit',
+      name: 'exercise-edit',
+      component: EditExercise
     },
     {
       path: '/news',

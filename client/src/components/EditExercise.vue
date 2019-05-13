@@ -5,37 +5,6 @@
         <v-toolbar flat dense class="blue darken-2" dark>
           <v-toolbar-title>New Exercise</v-toolbar-title>
         </v-toolbar>
-
-        <div class="pl-4 pr-4 pt-2 pb-2">
-          <v-text-field
-            label="Title"
-            v-model="exercise.title"
-          ></v-text-field>
-          <br>
-
-          <v-text-field
-            label="Target muscle group"
-            v-model="exercise.muscleGroup"
-          ></v-text-field>
-          <br>
-
-          <v-text-field
-            label="Goal type"
-            v-model="exercise.goalGroup"
-          ></v-text-field>
-          <br>
-
-          <v-text-field
-            label="Difficulty level"
-            v-model="exercise.difficulty"
-          ></v-text-field>
-          <br>
-
-          <v-text-field
-            label="Image URL"
-            v-model="exercise.imageURL"
-          ></v-text-field>
-
           <br>
           <v-btn
             dark
@@ -50,7 +19,6 @@
             Cancel
           </v-btn>
         </div>
-      </div>
     </v-flex>
   </v-layout>
 </template>

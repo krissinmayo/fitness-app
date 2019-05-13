@@ -8,6 +8,9 @@ export default {
       }
     })
   },
+  show (exerciseId) {
+    return Api().get(`exercises/${exerciseId}`)
+  },
   post (exercise) {
     return Api().post('exercises', exercise)
   }
