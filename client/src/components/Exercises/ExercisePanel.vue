@@ -39,7 +39,7 @@
               dark
               class="blue darken-2"
               @click="navigateTo({
-                name: 'exercise',
+                name: 'exercise-edit',
                 params: {
                   exerciseId: exercise.id
                 }
@@ -64,6 +64,7 @@ export default {
   methods: {
     navigateTo (route) {
       this.$router.push(route)
+      console.log(route)
     }
   },
   watch: {

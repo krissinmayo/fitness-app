@@ -24,12 +24,7 @@
 export default {
   props: [
     'exercise'
-  ],
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
-    }
-  }
+  ]
 }
 </script>
 

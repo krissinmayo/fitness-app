@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ExerciseData from './ExerciseData'
+import ExerciseData from '@/components/ExerciseView/ExerciseData'
 import ExerciseService from '@/services/ExerciseService'
 export default {
   data () {
@@ -17,7 +17,8 @@ export default {
   },
   async mounted () {
     const exerciseId = this.$store.state.route.params.exerciseId
-    this.exercise = (await ExerciseService.show(exerciseId)).data
+    const exercise = (await ExerciseService.show(exerciseId)).data
+    console.log(exercise)
   },
   components: {
     ExerciseData
