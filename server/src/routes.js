@@ -15,6 +15,8 @@ module.exports = (app) => {
     ExerciseController.index)
   app.get('/exercises/:exerciseId',
     ExerciseController.show)
+  app.put('/exercises/:exerciseId',
+    ExerciseController.put)
   app.post('/exercises',
     ExerciseController.post)
 

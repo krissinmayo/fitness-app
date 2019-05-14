@@ -1,10 +1,10 @@
 <template>
- <v-layout>
+  <v-layout>
     <v-flex xs6>
-      <search-panel />
+      <search-panel :exercise="exercise" />
     </v-flex>
-    <v-flex xs8>
-      <exercise-panel class="ml-2" />
+    <v-flex xs6 class="ml-2">
+      <exercise-panel />
     </v-flex>
   </v-layout>
 </template>
@@ -14,13 +14,9 @@ import ExerciseService from '@/services/ExerciseService'
 import ExercisePanel from './ExercisePanel'
 import SearchPanel from './SearchPanel'
 export default {
-  components: {
-    ExercisePanel,
-    SearchPanel
-  },
   data () {
     return {
-      exercises: []
+      exercises: {}
     }
   },
   methods: {
@@ -29,7 +25,12 @@ export default {
     }
   },
   async mounted () {
-    this.exercises = (await ExerciseService.index()).data
+    const exerciseId = this.route.params.exerciseId
+    this.exercise = (await ExerciseService.show(exerciseId)).data
+  },
+  components: {
+    ExercisePanel,
+    SearchPanel
   }
 }
 </script>

@@ -51,5 +51,19 @@ module.exports = {
         error: 'An error has occured while creating exercise'
       })
     }
+  },
+  async put (req, res) {
+    try {
+      await Exercise.update(req.body, {
+        where: {
+          id: req.params.exerciseId
+        }
+      })
+      res.send(req.body)
+    } catch (err) {
+      res.status(500).send({
+        error: 'error occured while trying to update'
+      })
+    }
   }
 }

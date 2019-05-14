@@ -17,23 +17,13 @@
       </div>
     </v-flex>
     <v-flex xs8>
-      <div class="ml-4">
-        <v-toolbar>
-          <v-toolbar-title>My Workout</v-toolbar-title>
-        </v-toolbar>
-      </div>
-      <div class="pl-4 pr-4 pt-2 pb-2"
-        v-for="exercise in exercises"
-        :key="exercise.id">
-          {{exercise.title}} -
-          {{exercise.muscleGroup}} -
-          {{exercise.goalGroup}}
-      </div>
+      <exercise-panel />
     </v-flex>
   </v-layout>
 </template>
 
 <script>
+import ExercisePanel from '@/components/Exercises/ExercisePanel'
 import NewsService from '@/services/NewsService'
 import ExerciseService from '@/services/ExerciseService'
 export default {
@@ -51,6 +41,9 @@ export default {
   async mounted () {
     this.stories = (await NewsService.index()).data
     this.exercises = (await ExerciseService.index()).data
+  },
+  components: {
+    ExercisePanel
   }
 }
 </script>
